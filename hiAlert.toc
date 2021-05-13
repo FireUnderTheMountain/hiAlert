@@ -1,0 +1,23 @@
+## Interface: 90002
+## Title: hiAlert
+## Description: Custom alerts for various in-game events.
+## Author: Haruka Ikazan
+## Version: 90002-9.0.2
+## Notes: 
+## OptionalDeps: Ace3, libdatabroker-1-1, Hiui
+## SavedVariables: hiAlertDB, hiAlertErrors
+## X-Embeds: Ace3
+
+lib\libdatabroker-1-1\LibDataBroker-1.1.lua
+
+lib\Ace3\LibStub\LibStub.lua
+lib\Ace3\CallbackHandler-1.0\CallbackHandler-1.0.xml
+lib\Ace3\AceAddon-3.0\AceAddon-3.0.xml
+lib\Ace3\AceEvent-3.0\AceEvent-3.0.xml
+lib\Ace3\AceDB-3.0\AceDB-3.0.xml
+lib\Ace3\AceConsole-3.0\AceConsole-3.0.xml
+lib\Ace3\AceGUI-3.0\AceGUI-3.0.xml
+lib\Ace3\AceConfig-3.0\AceConfig-3.0.xml
+
+init.lua
+main.lua
