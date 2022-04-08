@@ -1,5 +1,4 @@
-local addonName, hiAlert = ...
-local hiAAA = LibStub("AceAddon-3.0"):NewAddon("hiAlert", "AceConsole-3.0", "AceEvent-3.0") -- NewAddon takes a name to create, and mixins.
+local hiAlert = LibStub("AceAddon-3.0"):NewAddon("hiAlert", "AceConsole-3.0", "AceEvent-3.0") -- NewAddon takes a name to create, and mixins.
 
 local defaults = {
 	global = {
@@ -38,11 +37,11 @@ local options = {
 }
 
 
-function hiAAA:runParts(tableOfFuncs, ...)
-	for func, _ in pairs(tableOfFuncs) do
-		tableOfFuncs[func](self)
-	end
-end
+-- function hiAAA:runParts(tableOfFuncs, ...)
+-- 	for func, _ in pairs(tableOfFuncs) do
+-- 		tableOfFuncs[func](self)
+-- 	end
+-- end
 
 --function hiAAA:handleSlashCommand(input)
 --	if not input or input:trim() == "" then
@@ -62,49 +61,28 @@ local OnInitialize = {
 	end,
 
 	EstablishDB = function(self)
-		self.db = LibStub("AceDB-3.0"):New("hiAlertDB", defaults, "Hiui")
+		self.db = LibStub("AceDB-3.0"):New("hiAlert", defaults, "Hiui")
 		options.args.profile = LibStub("AceDBOptions-3.0"):GetOptionsTable(self.db)
 	end,
 }
 
-function hiAAA:OnInitialize()
+function hiAlert:OnInitialize()
 	-- Options table creates the name using table.
-	
 	--self:RegisterChatCommand("hialert", "handleSlashCommand")
 	--self:RegisterChatCommand("hia", "handleSlashCommand")
-
-	self:runParts(OnInitialize)
-
 end
 
-
-
-local OnEnable = {
-	fakefunc = function(self)
-		self:RegisterEvent("ZONE_CHANGED")
-		self:Print("Zone change registered.")
-	end,
-}
-
-function hiAAA:OnEnable()
-	self:runParts(OnEnable)
+function hiAlert:OnEnable()
+	--self:Print("Enabling hiAlert.")
 end
 
-
-
-local OnDisable = {
-
-}
-
-function hiAAA:OnDisable()
-	self:runParts(OnDisable)
+function hiAlert:OnDisable()
+	--self:Print("Disabling hiAlert.")
 end
 
 
 
 --[[	Exports		]]--
-hiAlert.Ace = hiAAA
-hiAlert.options = options
 --hiAlert.OnInitialize = OnInitialize
 --hiAlert.OnEnable = OnEnable
 --hiAlert.OnDisable = OnDisable
